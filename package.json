@@ -10,10 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.509.0",
-    "@aws-sdk/credential-provider-cognito-identity": "^3.509.0",
-    "@aws-sdk/s3-request-presigner": "^3.509.0",
-    "@aws-sdk/util-endpoints": "^3.509.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.3.4",

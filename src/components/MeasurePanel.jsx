@@ -5,15 +5,16 @@ import {
   MenuItem, Menu, TextField, Dialog, DialogTitle, DialogContent, ToggleButton,
   ToggleButtonGroup,
   DialogActions, Tabs, Tab, Box
-} from "@mui/material";
+} from "@mui/material"; 
 import DownloadIcon from "@mui/icons-material/Download";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import AddIcon from "@mui/icons-material/Add";
-import { getDefaultBucket } from "../utils/awsConfig";
+import { getDefaultBucket, getAwsRegion } from "../utils/awsConfig";
 
 const DEFAULT_CUSTOM_MODEL = {
-  bucket: getDefaultBucket(),
+  bucket: getDefaultBucket() || "",
+  region: getAwsRegion() || "",
   prefix: "data/3dtiles",
   tileset: "custom/tileset.json",
   offsetHeight: 0,
@@ -461,6 +462,14 @@ export default function MeasurePanel({
         <DialogTitle>Custom S3 Model</DialogTitle>
         <DialogContent>
           <Stack spacing={2} mt={1}>
+            <TextField
+              size="small"
+              label="Region"
+              placeholder="e.g., us-east-1"
+              value={draftCustomModel.region}
+              onChange={handleCustomFieldChange("region")}
+              fullWidth
+            />
             <TextField
               size="small"
               label="Bucket"

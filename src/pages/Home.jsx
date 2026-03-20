@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState, useCallback } from "react"
 import CesiumViewer from "../components/CesiumViewer";
 import MeasurePanel from "../components/MeasurePanel";
 import GeometryCreatorPanel from "../components/GeometryCreatorPanel";
-import { getDefaultBucket, validateAwsConfig, AWS_REGION } from "../utils/awsConfig";
+import { getDefaultBucket, getAwsRegion } from "../utils/awsConfig";
 import {
   Button
 } from "@mui/material";
@@ -20,14 +20,10 @@ const BASE_MODELS = [
   },
 ];
 
-function buildTilesetUrl(model) {
-  if (!model.bucket || !validateAwsConfig()) return "";
-
+function buildS3Key(model) {
   const tilesetPath = (model.tileset || "tileset.json").replace(/^\/+/, "");
   const prefix = (model.prefix || "").replace(/\/+$/, "");
   const s3Key = prefix ? `${prefix}/${tilesetPath}` : tilesetPath;
-
-  // Return placeholder - actual signed URL will be created asynchronously
   return s3Key;
 }
 
@@ -45,17 +41,9 @@ function downloadFile(content, fileName, contentType) {
 }
 
 export default function Home() {
-  // AWS configuration validation
-  useEffect(() => {
-    if (!validateAwsConfig()) {
-      console.warn(
-        "AWS configuration incomplete. Check your .env file for required variables."
-      );
-    }
-  }, []);
-
   const [customModel, setCustomModel] = useState({
-    bucket: getDefaultBucket(),
+    bucket: getDefaultBucket() || "",
+    region: getAwsRegion() || "",
     prefix: "data/3dtiles",
     tileset: "custom/tileset.json",
     offsetHeight: 0,
@@ -115,15 +103,15 @@ export default function Home() {
     if (selectedModel.id === "url") {
       setTilesetUrl(urlModel.tilesetUrl || "");
     } else if (selectedModel.id === "custom") {
-      if (validateAwsConfig()) {
-        const s3Key = buildTilesetUrl(selectedModel);
-        const directUrl = `https://${selectedModel.bucket}.s3.${AWS_REGION}.amazonaws.com/${s3Key}`;
+      if (selectedModel.bucket && selectedModel.region) {
+        const s3Key = buildS3Key(selectedModel);
+        const directUrl = `https://${selectedModel.bucket}.s3.${selectedModel.region}.amazonaws.com/${s3Key}`;
         setTilesetUrl(directUrl);
       } else {
         setTilesetUrl("");
         // Only warn if user actively selected it to avoid noise on startup
         if (selectedModelId === 'custom') {
-            console.warn("Custom S3 model selected, but AWS environment variables (VITE_AWS_REGION, VITE_S3_BUCKET) are not configured in .env.local");
+            console.warn("Custom S3 model selected, but Bucket and Region are not configured in the dialog or .env.local");
         }
       }
     } else { // It's a base model from the hardcoded list

@@ -29,11 +29,3 @@ export function getDefaultBucket() {
 export function getAwsRegion() {
   return AWS_REGION;
 }
-
-/**
- * Validates that the required AWS environment variables are set.
- * @returns {boolean} True if configuration is valid, false otherwise.
- */
-export function validateAwsConfig() {
-  return !!(AWS_REGION && DEFAULT_BUCKET);
-}

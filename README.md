@@ -1,4 +1,4 @@
-# 3D Gaussian Splatting Point Measurement Tool
+# 3DGS Point Measurement Tool
 
 **Accurate Point Measurement in 3DGS - A New Alternative to Traditional Stereoscopic-View Based Measurements**
 
@@ -127,7 +127,6 @@ Core dependencies include:
 - `react` - UI framework
 - `cesium` & `resium` - 3D visualization
 - `@mui/material` - Component library
-- `@aws-sdk/*` - AWS integration
 - `react-router-dom` - Routing
 
 See `package.json` for complete dependency list and versions.
