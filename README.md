@@ -17,7 +17,8 @@ A web-based interactive tool for precise point measurement in 3D Gaussian Splatt
 Watch the demonstration video:
 
 <video width="100%" controls>
-  <source src="demos/3dgs_measurement_tool_demo_30s.mp4" type="video/mp4">
+  <!-- Update 'yourusername' and 'main' (if your branch is different) to match your repository -->
+  <source src="https://raw.githubusercontent.com/GDAOSU/3dgs_measurement_tool/main/demos/3dgs_measurement_tool_demo_30s.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -48,7 +49,7 @@ Try the interactive demo on HuggingFace Spaces: [3DGS Measurement Tool](https://
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/3dgs_measurement_tool.git
+   git clone https://github.com/GDAOSU/3dgs_measurement_tool.git
    cd 3dgs_measurement_tool
    ```
 
