@@ -58,8 +58,9 @@ Try the interactive demo on HuggingFace Spaces: [3DGS Measurement Tool](https://
    ```
 
 3. Set up environment variables:
-   - This step is **optional**. The application includes demo models directly in the repository and works out-of-the-box.
-   - To use the "Custom S3 Model" feature for your own data, you can create a `.env.local` file and provide your S3 bucket details.
+   - This step is **optional** for local development. The application works out-of-the-box.
+   - To configure the application for deployment or to use the "Custom S3 Model" feature, create a `.env.local` file by copying the provided `.env.example`.
+   - See `.env.example` for a list of available variables and their descriptions.
 
 ### Development
 

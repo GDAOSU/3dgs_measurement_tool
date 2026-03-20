@@ -8,7 +8,7 @@ export default defineConfig(({ command, mode }) => {
 
   return {
   // For dev, we always use root. For prod, we use the determined base path.
-  base: '/',
+  base: env.VITE_BASE_PATH || '/',
   plugins: [react(), cesium()],
   server: {
     port: 5173,
