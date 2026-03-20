@@ -1,0 +1,285 @@
+{
+  "asset": { "version": "1.1" },
+  "geometricError": 151.292,
+  "extensions": {
+    "3DTILES_content_gltf": {
+      "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+      "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+    }
+  },
+  "extensionsUsed": ["3DTILES_content_gltf"],
+  "root": {
+    "transform": [
+      0.992596, 0.121464, 0, 0,
+      -0.0781016, 0.638242, 0.765864, 0,
+      0.0930247, -0.760193, 0.643003, 0,
+      594147, -4.85534e+06, 4.07935e+06, 1
+    ],
+    "boundingVolume": { "box": [5.77335, 5.57448, 137.934, 53.4117, 0, 0, 0, 52.244, 0, 0, 0, 11.834] },
+    "geometricError": 151.292,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_0_0_0_0.glb" },
+    "children": [
+    {
+    "boundingVolume": { "box": [-20.9325, -20.5475, 132.017, 26.7059, 0, 0, 0, 26.122, 0, 0, 0, 5.917] },
+    "geometricError": 75.6459,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_1_0_0_0.glb" },
+    "children": [
+    {
+    "boundingVolume": { "box": [-34.2855, -33.6085, 129.059, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_2_0_0_0.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [-7.57959, -33.6085, 129.059, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_2_1_0_0.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [-34.2855, -7.48652, 129.059, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_2_0_1_0.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [-7.57959, -7.48652, 129.059, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
+    "geometricError": 37.8229,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_2_1_1_0.glb" },
+    "children": [
+    {
+    "boundingVolume": { "box": [-14.2561, -14.017, 127.58, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47926] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_3_2_2_0.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [-0.903117, -14.017, 127.58, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47926] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_3_3_2_0.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [-14.2561, -0.956021, 127.58, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47926] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_3_2_3_0.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [-0.903117, -0.956021, 127.58, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47926] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_3_3_3_0.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [-14.2561, -14.017, 130.538, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47925] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_3_2_2_1.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [-0.903117, -14.017, 130.538, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47925] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_3_3_2_1.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [-14.2561, -0.956021, 130.538, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47925] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_3_2_3_1.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [-0.903117, -0.956021, 130.538, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47925] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_3_3_3_1.glb" }    }
+
+    ]
+    }
+,
+    {
+    "boundingVolume": { "box": [-34.2855, -33.6085, 134.976, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_2_0_0_1.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [-7.57959, -33.6085, 134.976, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_2_1_0_1.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [-34.2855, -7.48652, 134.976, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_2_0_1_1.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [-7.57959, -7.48652, 134.976, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_2_1_1_1.glb" }    }
+
+    ]
+    }
+,
+    {
+    "boundingVolume": { "box": [32.4792, -20.5475, 132.017, 26.7059, 0, 0, 0, 26.122, 0, 0, 0, 5.917] },
+    "geometricError": 75.6459,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_1_1_0_0.glb" },
+    "children": [
+    {
+    "boundingVolume": { "box": [19.1263, -33.6085, 129.059, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_2_2_0_0.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [45.8322, -33.6085, 129.059, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_2_3_0_0.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [19.1263, -7.48652, 129.059, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_2_2_1_0.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [45.8322, -7.48652, 129.059, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_2_3_1_0.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [19.1263, -33.6085, 134.976, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_2_2_0_1.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [45.8322, -33.6085, 134.976, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_2_3_0_1.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [19.1263, -7.48652, 134.976, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_2_2_1_1.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [45.8322, -7.48652, 134.976, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_2_3_1_1.glb" }    }
+
+    ]
+    }
+,
+    {
+    "boundingVolume": { "box": [-20.9325, 31.6965, 132.017, 26.7059, 0, 0, 0, 26.122, 0, 0, 0, 5.917] },
+    "geometricError": 75.6459,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_1_0_1_0.glb" },
+    "children": [
+    {
+    "boundingVolume": { "box": [-7.57959, 18.6355, 129.059, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
+    "geometricError": 37.8229,
+    "refine": "REPLACE",
+    "children": [
+    {
+    "boundingVolume": { "box": [-14.2561, 12.105, 127.58, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47926] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_3_2_4_0.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [-0.903117, 12.105, 127.58, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47926] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_3_3_4_0.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [-14.2561, 25.166, 127.58, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47926] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_3_2_5_0.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [-0.903117, 25.166, 127.58, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47926] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_3_3_5_0.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [-14.2561, 12.105, 130.538, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47925] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_3_2_4_1.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [-0.903117, 12.105, 130.538, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47925] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_3_3_4_1.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [-14.2561, 25.166, 130.538, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47925] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_3_2_5_1.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [-0.903117, 25.166, 130.538, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47925] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_3_3_5_1.glb" }    }
+
+    ]
+    }
+
+    ]
+    }
+,
+    {
+    "boundingVolume": { "box": [32.4792, 31.6965, 132.017, 26.7059, 0, 0, 0, 26.122, 0, 0, 0, 5.917] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_1_1_1_0.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [-20.9325, -20.5475, 143.851, 26.7059, 0, 0, 0, 26.122, 0, 0, 0, 5.91699] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_1_0_0_1.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [32.4792, -20.5475, 143.851, 26.7059, 0, 0, 0, 26.122, 0, 0, 0, 5.91699] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_1_1_0_1.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [-20.9325, 31.6965, 143.851, 26.7059, 0, 0, 0, 26.122, 0, 0, 0, 5.91699] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_1_0_1_1.glb" }    }
+,
+    {
+    "boundingVolume": { "box": [32.4792, 31.6965, 143.851, 26.7059, 0, 0, 0, 26.122, 0, 0, 0, 5.91699] },
+    "geometricError": 0,
+    "refine": "REPLACE",
+    "content": { "uri": "tile_1_1_1_1.glb" }    }
+
+    ]
+  }
+}
