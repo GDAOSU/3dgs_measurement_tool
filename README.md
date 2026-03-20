@@ -10,7 +10,7 @@ A web-based interactive tool for precise point measurement in 3D Gaussian Splatt
 
 - **Publication**: ISPRS 2026
 - **arXiv**: [Link to arXiv](#) *(Update with your arXiv link)*
-- **Preprint**: Available in this repository
+- **Preprint**: Available in the `docs` folder.
 
 ## 🎥 Demo
 
