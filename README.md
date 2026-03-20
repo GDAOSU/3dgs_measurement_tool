@@ -18,7 +18,7 @@ Watch the demonstration video:
 
 <video width="100%" controls>
   <!-- Update 'yourusername' and 'main' (if your branch is different) to match your repository -->
-  <source src="https://raw.githubusercontent.com/GDAOSU/3dgs_measurement_tool/main/demos/3dgs_measurement_tool_demo_30s.mp4" type="video/mp4">
+  <source src="./demos/3dgs_measurement_tool_demo_30s.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
