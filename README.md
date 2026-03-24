@@ -135,13 +135,6 @@ See `package.json` for complete dependency list and versions.
 
 Configuration for features like AWS S3 integration is handled via environment variables. Please refer to the `Set up environment variables` step in the Getting Started section for instructions on how to create and use the `.env.local` file.
 
-##  Issues & Support
-
-For issues, questions, or suggestions, please:
-- Open an issue on GitHub
-- Check existing issues for solutions
-- Provide detailed information about your setup and the problem
-
 ## 📝 Citation
 
 If you use this tool or the methodology in your research, please cite our paper:
