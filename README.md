@@ -1,6 +1,6 @@
 # 3DGS Point Measurement Tool
 
-A web-based interactive tool for precise point measurement in 3D Gaussian Splatting (3DGS) scenes. This project implements the methodology presented in the research paper and provides an intuitive interface for users to perform accurate measurements directly on 3DGS models.
+This repository contains the official implementation for our paper on a novel method for accurate point measurement in 3D Gaussian Splatting (3DGS). This web-based tool uses a multi-ray intersection technique to provide a robust and accurate alternative to traditional stereoscopic measurement approaches.
 
 ## 📄 Paper
 
@@ -155,4 +155,3 @@ For questions or inquiries about this work, please contact:
 - **Author(s)**: Deyan Deng, Rongjun Qin
 - **Email**: deng.1069@osu.edu, qin.324@osu.edu
 - **Institution**: The Ohio State University
-
