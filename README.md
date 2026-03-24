@@ -16,11 +16,13 @@ A web-based interactive tool for precise point measurement in 3D Gaussian Splatt
 
 Watch the demonstration video:
 
-<video width="100%" controls>
-  <!-- Update 'yourusername' and 'main' (if your branch is different) to match your repository -->
-  <source src="./demos/3dgs_measurement_tool_demo_30s.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<!--
+  To get a working video link for your README:
+  1. Compress your video to be under 10 MB.
+  2. Drag & drop the compressed video file into a GitHub issue comment box to upload it.
+  3. Copy the public asset URL that GitHub generates and paste it into the src attribute below.
+-->
+<video src="https://github.com/GDAOSU/3dgs_measurement_tool/blob/main/demos/3dgs_measurement_tool_demo_30s.mp4" width="100%" controls autoplay loop>Your browser does not support the video tag.</video>
 
 ## 🤗 Try Online
 
@@ -175,7 +177,7 @@ If you use this tool or the methodology in your research, please cite our paper:
 ```bibtex
 @article{your_citation_2026,
   title={Accurate Point Measurement in 3DGS - A New Alternative to Traditional Stereoscopic-View Based Measurements},
-  author={Your Name(s)},
+  author={Deyan Deng, Rongjun Qin},
   journal={ISPRS},
   year={2026},
   note={arXiv preprint arXiv:XXXX.XXXXX}
@@ -196,9 +198,9 @@ This project is licensed under the [LICENSE TYPE] - see the LICENSE file for det
 ## 📧 Contact
 
 For questions or inquiries about this work, please contact:
-- **Author(s)**: [Your Name]
-- **Email**: [Your Email]
-- **Institution**: [Your Institution]
+- **Author(s)**: Deyan Deng
+- **Email**: deng.1069@osu.edu
+- **Institution**: The Ohio State University
 
 ---
 
