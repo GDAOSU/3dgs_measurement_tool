@@ -197,8 +197,8 @@ This project is licensed under the [LICENSE TYPE] - see the LICENSE file for det
 ## 📧 Contact
 
 For questions or inquiries about this work, please contact:
-- **Author(s)**: Deyan Deng
-- **Email**: deng.1069@osu.edu
+- **Author(s)**: Deyan Deng, Rongjun Qin
+- **Email**: deng.1069@osu.edu, qin.324@osu.edu
 - **Institution**: The Ohio State University
 
 ---
