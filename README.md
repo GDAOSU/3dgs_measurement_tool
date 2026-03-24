@@ -22,8 +22,7 @@ Watch the demonstration video:
   2. Drag & drop the compressed video file into a GitHub issue comment box to upload it.
   3. Copy the public asset URL that GitHub generates and paste it into the src attribute below.
 -->
-<video src="https://github.com/GDAOSU/3dgs_measurement_tool/blob/main/demos/3dgs_measurement_tool_demo_30s.mp4" width="100%" controls autoplay loop>Your browser does not support the video tag.</video>
-
+[![3DGS Measurement Tool Demo](https://img.youtube.com/vi/YOUTUBE_ID/maxresdefault.jpg)](https://youtu.be/qImi8eVjLvk)
 ## 🤗 Try Online
 
 Try the interactive demo on HuggingFace Spaces: [3DGS Measurement Tool](https://huggingface.co/spaces/GDAOSU/3dgs_measurement_tool) *(Update with your HuggingFace Space link)*
