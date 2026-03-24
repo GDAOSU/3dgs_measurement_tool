@@ -1,16 +1,13 @@
 # 3DGS Point Measurement Tool
 
-**Accurate Point Measurement in 3DGS - A New Alternative to Traditional Stereoscopic-View Based Measurements**
-
 A web-based interactive tool for precise point measurement in 3D Gaussian Splatting (3DGS) scenes. This project implements the methodology presented in the research paper and provides an intuitive interface for users to perform accurate measurements directly on 3DGS models.
 
 ## 📄 Paper
 
-**"Accurate Point Measurement in 3DGS - A New Alternative to Traditional Stereoscopic-View Based Measurements"**
+**Accurate Point Measurement in 3DGS - A New Alternative to Traditional Stereoscopic-View Based Measurements** *Deyan Deng, Rongjun Qin* Accepted to the **ISPRS Congress, 2026**.
 
-- **Publication**: ISPRS 2026
-- **arXiv**: [Link to arXiv](#)
-- **Preprint**: Available in the `docs` folder.
+* 📜 **[arXiv Preprint](https://arxiv.org/abs/YOUR_LINK)** 
+* 📥 **[Download PDF](./docs/ISPRS_Congress_2026_Full_paper_point_measurement_in_3DGS.pdf)** *(Available in the `docs` folder)*
 
 ## 🎥 Demo
 
