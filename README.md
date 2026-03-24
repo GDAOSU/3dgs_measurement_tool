@@ -9,7 +9,7 @@ A web-based interactive tool for precise point measurement in 3D Gaussian Splatt
 **"Accurate Point Measurement in 3DGS - A New Alternative to Traditional Stereoscopic-View Based Measurements"**
 
 - **Publication**: ISPRS 2026
-- **arXiv**: [Link to arXiv](#) *(Update with your arXiv link)*
+- **arXiv**: [Link to arXiv](#)
 - **Preprint**: Available in the `docs` folder.
 
 ## 🎥 Demo
@@ -25,7 +25,7 @@ Watch the demonstration video:
 ![3DGS Measurement Tool Demo](demos/3dgs_measurement_demo.gif)
 ## 🤗 Try Online
 
-Try the interactive demo on HuggingFace Spaces: [3DGS Measurement Tool](https://huggingface.co/spaces/GDAOSU/3dgs_measurement_tool) *(Update with your HuggingFace Space link)*
+Try the interactive demo on HuggingFace Spaces: [3DGS Measurement Tool](https://huggingface.co/spaces/GDAOSU/3dgs_measurement_tool)
 
 ## ✨ Features
 
