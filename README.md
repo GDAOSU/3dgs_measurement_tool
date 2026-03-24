@@ -136,33 +136,9 @@ See `package.json` for complete dependency list and versions.
 
 ## 🔧 Configuration
 
-### Cesium Setup
+Configuration for features like AWS S3 integration is handled via environment variables. Please refer to the `Set up environment variables` step in the Getting Started section for instructions on how to create and use the `.env.local` file.
 
-Configure Cesium viewer in [cesiumSetup.js](src/cesiumSetup.js)
-
-### AWS S3 Integration
-
-Configure AWS credentials in [awsConfig.js](src/utils/awsConfig.js)
-
-### API Configuration
-
-Update API endpoints in [apiConfig.js](src/utils/apiConfig.js)
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📊 Results & Validation
-
-This tool provides comparable or superior accuracy compared to traditional stereoscopic-view based measurement methods. See the paper for detailed validation results and benchmarks.
-
-## 🐛 Issues & Support
+##  Issues & Support
 
 For issues, questions, or suggestions, please:
 - Open an issue on GitHub
@@ -183,17 +159,6 @@ If you use this tool or the methodology in your research, please cite our paper:
 }
 ```
 
-## 📄 License
-
-This project is licensed under the [LICENSE TYPE] - see the LICENSE file for details.
-
-## 🙏 Acknowledgments
-
-- ISPRS 2026 conference for publication opportunity
-- Cesium for 3D visualization technology
-- Material-UI for comprehensive component library
-- All contributors and testers
-
 ## 📧 Contact
 
 For questions or inquiries about this work, please contact:
@@ -201,6 +166,3 @@ For questions or inquiries about this work, please contact:
 - **Email**: deng.1069@osu.edu, qin.324@osu.edu
 - **Institution**: The Ohio State University
 
----
-
-**Last Updated**: March 2026
