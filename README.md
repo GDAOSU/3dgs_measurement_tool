@@ -6,7 +6,7 @@ This repository contains the official implementation for our paper on a novel me
 
 **Accurate Point Measurement in 3DGS - A New Alternative to Traditional Stereoscopic-View Based Measurements** *Deyan Deng, Rongjun Qin* Accepted to the **ISPRS Congress, 2026**.
 
-* 📜 **[arXiv Preprint](https://arxiv.org/abs/YOUR_LINK)** 
+* 📜 **[arXiv Preprint](https://arxiv.org/abs/2603.24716)** 
 * 📥 **[Download PDF](./docs/ISPRS_Congress_2026_Full_paper_point_measurement_in_3DGS.pdf)** *(Available in the `docs` folder)*
 
 ## 🎥 Demo
@@ -140,12 +140,13 @@ Configuration for features like AWS S3 integration is handled via environment va
 If you use this tool or the methodology in your research, please cite our paper:
 
 ```bibtex
-@article{your_citation_2026,
-  title={Accurate Point Measurement in 3DGS - A New Alternative to Traditional Stereoscopic-View Based Measurements},
-  author={Deyan Deng, Rongjun Qin},
-  journal={ISPRS},
-  year={2026},
-  note={arXiv preprint arXiv:XXXX.XXXXX}
+@misc{deng2026accurate,
+      title={Accurate Point Measurement in 3DGS -- A New Alternative to Traditional Stereoscopic-View Based Measurements}, 
+      author={Deyan Deng and Rongjun Qin},
+      year={2026},
+      eprint={2603.24716},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
 ```
 
