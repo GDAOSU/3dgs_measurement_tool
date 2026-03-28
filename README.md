@@ -14,7 +14,7 @@
 
 </div>
 
-This repository contains the official implementation and inference code for the 3DGS point measurement tool.
+This repository contains the official implementation for the 3DGS point measurement tool.
 
 ## 🔗 Resources
 
