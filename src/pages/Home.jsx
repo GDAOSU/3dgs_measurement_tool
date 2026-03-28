@@ -9,13 +9,12 @@ import {
 
 
 // Base models for demonstration.
-// The first two models are hosted locally within the repository's `public/models` directory.
-// This example now only includes one local model for simplicity.
+// Base models are hosted locally within the repository's `public/models` directory.
 const BASE_MODELS = [
   {
     id: "White Sculpture",
     name: "White Sculpture (Local)",
-    tilesetUrl: "/models/white/tileset.json", // Local path
+    tilesetUrls: ["/models/white/tileset.json"], // Local path(s)
     offsetHeight: -130,
   },
 ];
@@ -97,27 +96,30 @@ export default function Home() {
   );
 
   // Use direct unsigned S3 URL (bucket is publicly readable)
-  const [tilesetUrl, setTilesetUrl] = useState("");
+  const [tilesetUrls, setTilesetUrls] = useState([]);
 
   useEffect(() => {
     if (selectedModel.id === "url") {
-      setTilesetUrl(urlModel.tilesetUrl || "");
+      const primaryUrl = urlModel.tilesetUrl || "";
+      const extendedUrl = urlModel.extendedTilesetUrl || "";
+      setTilesetUrls([primaryUrl, extendedUrl].filter(Boolean));
     } else if (selectedModel.id === "custom") {
       if (selectedModel.bucket && selectedModel.region) {
         const s3Key = buildS3Key(selectedModel);
         const directUrl = `https://${selectedModel.bucket}.s3.${selectedModel.region}.amazonaws.com/${s3Key}`;
-        setTilesetUrl(directUrl);
+        setTilesetUrls([directUrl]);
       } else {
-        setTilesetUrl("");
+        setTilesetUrls([]);
         // Only warn if user actively selected it to avoid noise on startup
         if (selectedModelId === 'custom') {
             console.warn("Custom S3 model selected, but Bucket and Region are not configured in the dialog or .env.local");
         }
       }
     } else { // It's a base model from the hardcoded list
-      setTilesetUrl(selectedModel.tilesetUrl || "");
+      const modelUrls = (selectedModel.tilesetUrls || []).filter(Boolean);
+      setTilesetUrls(modelUrls);
     }
-  }, [selectedModel, selectedModelId, urlModel.tilesetUrl]);
+  }, [selectedModel, selectedModelId, urlModel.tilesetUrl, urlModel.extendedTilesetUrl]);
 
   const [points, setPoints] = useState([]);
   const [isMeasuring, setIsMeasuring] = useState(false);
@@ -405,7 +407,7 @@ export default function Home() {
       {/* Cesium Viewer */}
       <CesiumViewer
         ref={cesiumRef}
-        tilesetUrl={tilesetUrl}
+        tilesetUrls={tilesetUrls}
         points={points}
         onAddPoint={handleAddPoint}
         offsetHeight={offsetHeight}

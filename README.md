@@ -1,13 +1,27 @@
 # 3DGS Point Measurement Tool
 
-This repository contains the official implementation for our paper on a novel method for accurate point measurement in 3D Gaussian Splatting (3DGS). This web-based tool uses a multi-ray intersection technique to provide a robust and accurate alternative to traditional stereoscopic measurement approaches.
+## Accurate Point Measurement in 3DGS: A New Alternative to Traditional Stereoscopic-View Based Measurements
 
-## 📄 Paper
+**Deyan Deng¹, Rongjun Qin¹\***
 
-**Accurate Point Measurement in 3DGS - A New Alternative to Traditional Stereoscopic-View Based Measurements** *Deyan Deng, Rongjun Qin* Accepted to the **ISPRS Congress, 2026**.
+¹ The Ohio State University  
+\* Corresponding author
 
-* 📜 **[arXiv Preprint](https://arxiv.org/abs/2603.24716)** 
-* 📥 **[Download PDF](./docs/ISPRS_Congress_2026_Full_paper_point_measurement_in_3DGS.pdf)** *(Available in the `docs` folder)*
+[![Project Page](https://img.shields.io/badge/Project-Page-2f80ed?style=flat-square)](https://gdaosu.github.io/3dgs_measurement_tool/)
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-f7931a?style=flat-square)](https://huggingface.co/spaces/GDAOSU/3dgs_measurement_tool)
+[![arXiv](https://img.shields.io/badge/arXiv-2603.24716-b31b1b?style=flat-square&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2603.24716)
+[![Paper PDF](https://img.shields.io/badge/Paper-PDF-4c8c2b?style=flat-square&logo=readthedocs&logoColor=white)](./docs/ISPRS_Congress_2026_Full_paper_point_measurement_in_3DGS.pdf)
+
+This repository contains the official implementation and inference code for the 3DGS point measurement tool.
+
+## 🔗 Resources
+
+We provide a comprehensive suite of resources for this project:
+
+- **Project Page**: https://gdaosu.github.io/3dgs_measurement_tool/
+- **Interactive Demo**: https://huggingface.co/spaces/GDAOSU/3dgs_measurement_tool
+- **Paper**: https://arxiv.org/abs/2603.24716
+- **PDF**: [ISPRS_Congress_2026_Full_paper_point_measurement_in_3DGS.pdf](./docs/ISPRS_Congress_2026_Full_paper_point_measurement_in_3DGS.pdf)
 
 ## 🎥 Demo
 

@@ -1,285 +1,1102 @@
 {
   "asset": { "version": "1.1" },
-  "geometricError": 151.292,
+  "geometricError": 151.29171753,
+  "extensionsUsed": ["3DTILES_content_gltf"],
+  "extensionsRequired": ["3DTILES_content_gltf"],
   "extensions": {
     "3DTILES_content_gltf": {
       "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
       "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
     }
   },
-  "extensionsUsed": ["3DTILES_content_gltf"],
   "root": {
     "transform": [
-      0.992596, 0.121464, 0, 0,
-      -0.0781016, 0.638242, 0.765864, 0,
-      0.0930247, -0.760193, 0.643003, 0,
-      594147, -4.85534e+06, 4.07935e+06, 1
+      0.99259586, 0.12146380, 0.00000000, 0.00000000,
+      -0.07810155, 0.63824183, 0.76586390, 0.00000000,
+      0.09302474, -0.76019334, 0.64300271, 0.00000000,
+      594147.33458745, -4855341.25952595, 4079353.98742722, 1.00000000
     ],
-    "boundingVolume": { "box": [5.77335, 5.57448, 137.934, 53.4117, 0, 0, 0, 52.244, 0, 0, 0, 11.834] },
-    "geometricError": 151.292,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_0_0_0_0.glb" },
-    "children": [
-    {
-    "boundingVolume": { "box": [-20.9325, -20.5475, 132.017, 26.7059, 0, 0, 0, 26.122, 0, 0, 0, 5.917] },
-    "geometricError": 75.6459,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_1_0_0_0.glb" },
-    "children": [
-    {
-    "boundingVolume": { "box": [-34.2855, -33.6085, 129.059, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_2_0_0_0.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [-7.57959, -33.6085, 129.059, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_2_1_0_0.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [-34.2855, -7.48652, 129.059, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_2_0_1_0.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [-7.57959, -7.48652, 129.059, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
-    "geometricError": 37.8229,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_2_1_1_0.glb" },
-    "children": [
-    {
-    "boundingVolume": { "box": [-14.2561, -14.017, 127.58, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47926] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_3_2_2_0.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [-0.903117, -14.017, 127.58, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47926] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_3_3_2_0.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [-14.2561, -0.956021, 127.58, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47926] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_3_2_3_0.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [-0.903117, -0.956021, 127.58, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47926] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_3_3_3_0.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [-14.2561, -14.017, 130.538, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47925] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_3_2_2_1.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [-0.903117, -14.017, 130.538, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47925] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_3_3_2_1.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [-14.2561, -0.956021, 130.538, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47925] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_3_2_3_1.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [-0.903117, -0.956021, 130.538, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47925] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_3_3_3_1.glb" }    }
-
-    ]
-    }
-,
-    {
-    "boundingVolume": { "box": [-34.2855, -33.6085, 134.976, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_2_0_0_1.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [-7.57959, -33.6085, 134.976, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_2_1_0_1.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [-34.2855, -7.48652, 134.976, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_2_0_1_1.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [-7.57959, -7.48652, 134.976, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_2_1_1_1.glb" }    }
-
-    ]
-    }
-,
-    {
-    "boundingVolume": { "box": [32.4792, -20.5475, 132.017, 26.7059, 0, 0, 0, 26.122, 0, 0, 0, 5.917] },
-    "geometricError": 75.6459,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_1_1_0_0.glb" },
-    "children": [
-    {
-    "boundingVolume": { "box": [19.1263, -33.6085, 129.059, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_2_2_0_0.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [45.8322, -33.6085, 129.059, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_2_3_0_0.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [19.1263, -7.48652, 129.059, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_2_2_1_0.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [45.8322, -7.48652, 129.059, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_2_3_1_0.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [19.1263, -33.6085, 134.976, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_2_2_0_1.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [45.8322, -33.6085, 134.976, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_2_3_0_1.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [19.1263, -7.48652, 134.976, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_2_2_1_1.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [45.8322, -7.48652, 134.976, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_2_3_1_1.glb" }    }
-
-    ]
-    }
-,
-    {
-    "boundingVolume": { "box": [-20.9325, 31.6965, 132.017, 26.7059, 0, 0, 0, 26.122, 0, 0, 0, 5.917] },
-    "geometricError": 75.6459,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_1_0_1_0.glb" },
-    "children": [
-    {
-    "boundingVolume": { "box": [-7.57959, 18.6355, 129.059, 13.3529, 0, 0, 0, 13.061, 0, 0, 0, 2.9585] },
-    "geometricError": 37.8229,
-    "refine": "REPLACE",
-    "children": [
-    {
-    "boundingVolume": { "box": [-14.2561, 12.105, 127.58, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47926] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_3_2_4_0.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [-0.903117, 12.105, 127.58, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47926] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_3_3_4_0.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [-14.2561, 25.166, 127.58, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47926] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_3_2_5_0.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [-0.903117, 25.166, 127.58, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47926] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_3_3_5_0.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [-14.2561, 12.105, 130.538, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47925] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_3_2_4_1.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [-0.903117, 12.105, 130.538, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47925] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_3_3_4_1.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [-14.2561, 25.166, 130.538, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47925] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_3_2_5_1.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [-0.903117, 25.166, 130.538, 6.67647, 0, 0, 0, 6.5305, 0, 0, 0, 1.47925] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_3_3_5_1.glb" }    }
-
-    ]
-    }
-
-    ]
-    }
-,
-    {
-    "boundingVolume": { "box": [32.4792, 31.6965, 132.017, 26.7059, 0, 0, 0, 26.122, 0, 0, 0, 5.917] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_1_1_1_0.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [-20.9325, -20.5475, 143.851, 26.7059, 0, 0, 0, 26.122, 0, 0, 0, 5.91699] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_1_0_0_1.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [32.4792, -20.5475, 143.851, 26.7059, 0, 0, 0, 26.122, 0, 0, 0, 5.91699] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_1_1_0_1.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [-20.9325, 31.6965, 143.851, 26.7059, 0, 0, 0, 26.122, 0, 0, 0, 5.91699] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_1_0_1_1.glb" }    }
-,
-    {
-    "boundingVolume": { "box": [32.4792, 31.6965, 143.851, 26.7059, 0, 0, 0, 26.122, 0, 0, 0, 5.91699] },
-    "geometricError": 0,
-    "refine": "REPLACE",
-    "content": { "uri": "tile_1_1_1_1.glb" }    }
-
-    ]
+      "boundingVolume": { "box": [5.77335167, 5.57448196, 137.93426514, 53.41174316, 0, 0, 0, 52.24402237, 0, 0, 0, 11.83399200] },
+      "geometricError": 151.29171753,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_0_0_0_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      },
+      "children": [
+        {
+      "boundingVolume": { "box": [-20.93252182, -20.54752922, 132.01727295, 26.70587158, 0, 0, 0, 26.12201118, 0, 0, 0, 5.91699982] },
+      "geometricError": 75.64585876,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_1_0_0_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      },
+      "children": [
+        {
+      "boundingVolume": { "box": [-34.28545761, -33.60853577, 129.05877686, 13.35293579, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95850372] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_0_0_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-7.57958508, -33.60853577, 129.05877686, 13.35293674, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95850372] },
+      "geometricError": 37.82292938,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_1_0_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      },
+      "children": [
+        {
+      "boundingVolume": { "box": [-14.25605392, -40.13903809, 127.57952118, 6.67646837, 0, 0, 0, 6.53050232, 0, 0, 0, 1.47925568] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_2_0_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-0.90311670, -40.13903809, 127.57952118, 6.67646837, 0, 0, 0, 6.53050232, 0, 0, 0, 1.47925568] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_3_0_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-14.25605392, -27.07803345, 127.57952118, 6.67646837, 0, 0, 0, 6.53050327, 0, 0, 0, 1.47925568] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_2_1_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-0.90311670, -27.07803345, 127.57952118, 6.67646837, 0, 0, 0, 6.53050327, 0, 0, 0, 1.47925568] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_3_1_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-14.25605392, -40.13903809, 130.53802490, 6.67646837, 0, 0, 0, 6.53050232, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_2_0_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-0.90311670, -40.13903809, 130.53802490, 6.67646837, 0, 0, 0, 6.53050232, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_3_0_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-14.25605392, -27.07803345, 130.53802490, 6.67646837, 0, 0, 0, 6.53050327, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_2_1_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-0.90311670, -27.07803345, 130.53802490, 6.67646837, 0, 0, 0, 6.53050327, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_3_1_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        }
+      ]
+        },        {
+      "boundingVolume": { "box": [-34.28545761, -7.48652363, 129.05877686, 13.35293579, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95850372] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_0_1_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-7.57958508, -7.48652363, 129.05877686, 13.35293674, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95850372] },
+      "geometricError": 37.82292938,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_1_1_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      },
+      "children": [
+        {
+      "boundingVolume": { "box": [-14.25605392, -14.01702690, 127.57952118, 6.67646837, 0, 0, 0, 6.53050280, 0, 0, 0, 1.47925568] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_2_2_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-0.90311670, -14.01702690, 127.57952118, 6.67646837, 0, 0, 0, 6.53050280, 0, 0, 0, 1.47925568] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_3_2_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-14.25605392, -0.95602083, 127.57952118, 6.67646837, 0, 0, 0, 6.53050280, 0, 0, 0, 1.47925568] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_2_3_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-0.90311670, -0.95602083, 127.57952118, 6.67646837, 0, 0, 0, 6.53050280, 0, 0, 0, 1.47925568] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_3_3_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-14.25605392, -14.01702690, 130.53802490, 6.67646837, 0, 0, 0, 6.53050280, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_2_2_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-0.90311670, -14.01702690, 130.53802490, 6.67646837, 0, 0, 0, 6.53050280, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_3_2_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-14.25605392, -0.95602083, 130.53802490, 6.67646837, 0, 0, 0, 6.53050280, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_2_3_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-0.90311670, -0.95602083, 130.53802490, 6.67646837, 0, 0, 0, 6.53050280, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_3_3_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        }
+      ]
+        },        {
+      "boundingVolume": { "box": [-34.28545761, -33.60853577, 134.97576904, 13.35293579, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95849609] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_0_0_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-7.57958508, -33.60853577, 134.97576904, 13.35293674, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95849609] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_1_0_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-34.28545761, -7.48652363, 134.97576904, 13.35293579, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95849609] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_0_1_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-7.57958508, -7.48652363, 134.97576904, 13.35293674, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95849609] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_1_1_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        }
+      ]
+        },        {
+      "boundingVolume": { "box": [32.47922516, -20.54752922, 132.01727295, 26.70587158, 0, 0, 0, 26.12201118, 0, 0, 0, 5.91699982] },
+      "geometricError": 75.64585876,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_1_1_0_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      },
+      "children": [
+        {
+      "boundingVolume": { "box": [19.12628937, -33.60853577, 129.05877686, 13.35293674, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95850372] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_2_0_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [45.83216095, -33.60853577, 129.05877686, 13.35293579, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95850372] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_3_0_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [19.12628937, -7.48652363, 129.05877686, 13.35293674, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95850372] },
+      "geometricError": 37.82292938,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_2_1_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      },
+      "children": [
+        {
+      "boundingVolume": { "box": [12.44982052, -14.01702690, 127.57952118, 6.67646885, 0, 0, 0, 6.53050280, 0, 0, 0, 1.47925568] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_4_2_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [25.80275726, -14.01702690, 127.57952118, 6.67646790, 0, 0, 0, 6.53050280, 0, 0, 0, 1.47925568] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_5_2_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [12.44982052, -0.95602083, 127.57952118, 6.67646885, 0, 0, 0, 6.53050280, 0, 0, 0, 1.47925568] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_4_3_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [25.80275726, -0.95602083, 127.57952118, 6.67646790, 0, 0, 0, 6.53050280, 0, 0, 0, 1.47925568] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_5_3_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [12.44982052, -14.01702690, 130.53802490, 6.67646885, 0, 0, 0, 6.53050280, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_4_2_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [25.80275726, -14.01702690, 130.53802490, 6.67646790, 0, 0, 0, 6.53050280, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_5_2_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [12.44982052, -0.95602083, 130.53802490, 6.67646885, 0, 0, 0, 6.53050280, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_4_3_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [25.80275726, -0.95602083, 130.53802490, 6.67646790, 0, 0, 0, 6.53050280, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_5_3_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        }
+      ]
+        },        {
+      "boundingVolume": { "box": [45.83216095, -7.48652363, 129.05877686, 13.35293579, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95850372] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_3_1_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [19.12628937, -33.60853577, 134.97576904, 13.35293674, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95849609] },
+      "geometricError": 37.82292938,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_2_0_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      },
+      "children": [
+        {
+      "boundingVolume": { "box": [12.44982052, -40.13903809, 133.49652100, 6.67646885, 0, 0, 0, 6.53050232, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_4_0_2_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [25.80275726, -40.13903809, 133.49652100, 6.67646790, 0, 0, 0, 6.53050232, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_5_0_2_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [12.44982052, -27.07803345, 133.49652100, 6.67646885, 0, 0, 0, 6.53050327, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_4_1_2_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [25.80275726, -27.07803345, 133.49652100, 6.67646790, 0, 0, 0, 6.53050327, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_5_1_2_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [12.44982052, -40.13903809, 136.45501709, 6.67646885, 0, 0, 0, 6.53050232, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_4_0_3_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [25.80275726, -40.13903809, 136.45501709, 6.67646790, 0, 0, 0, 6.53050232, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_5_0_3_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [12.44982052, -27.07803345, 136.45501709, 6.67646885, 0, 0, 0, 6.53050327, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_4_1_3_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [25.80275726, -27.07803345, 136.45501709, 6.67646790, 0, 0, 0, 6.53050327, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_5_1_3_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        }
+      ]
+        },        {
+      "boundingVolume": { "box": [45.83216095, -33.60853577, 134.97576904, 13.35293579, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95849609] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_3_0_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [19.12628937, -7.48652363, 134.97576904, 13.35293674, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95849609] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_2_1_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [45.83216095, -7.48652363, 134.97576904, 13.35293579, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95849609] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_3_1_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        }
+      ]
+        },        {
+      "boundingVolume": { "box": [-20.93252182, 31.69649315, 132.01727295, 26.70587158, 0, 0, 0, 26.12201118, 0, 0, 0, 5.91699982] },
+      "geometricError": 75.64585876,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_1_0_1_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      },
+      "children": [
+        {
+      "boundingVolume": { "box": [-34.28545761, 18.63548660, 129.05877686, 13.35293579, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95850372] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_0_2_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-7.57958508, 18.63548660, 129.05877686, 13.35293674, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95850372] },
+      "geometricError": 37.82292938,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_1_2_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      },
+      "children": [
+        {
+      "boundingVolume": { "box": [-14.25605392, 12.10498428, 127.57952118, 6.67646837, 0, 0, 0, 6.53050232, 0, 0, 0, 1.47925568] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_2_4_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-0.90311670, 12.10498428, 127.57952118, 6.67646837, 0, 0, 0, 6.53050232, 0, 0, 0, 1.47925568] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_3_4_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-14.25605392, 25.16598892, 127.57952118, 6.67646837, 0, 0, 0, 6.53050327, 0, 0, 0, 1.47925568] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_2_5_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-0.90311670, 25.16598892, 127.57952118, 6.67646837, 0, 0, 0, 6.53050327, 0, 0, 0, 1.47925568] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_3_5_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-14.25605392, 12.10498428, 130.53802490, 6.67646837, 0, 0, 0, 6.53050232, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_2_4_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-0.90311670, 12.10498428, 130.53802490, 6.67646837, 0, 0, 0, 6.53050232, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_3_4_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-14.25605392, 25.16598892, 130.53802490, 6.67646837, 0, 0, 0, 6.53050327, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_2_5_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-0.90311670, 25.16598892, 130.53802490, 6.67646837, 0, 0, 0, 6.53050327, 0, 0, 0, 1.47924805] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_3_3_5_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        }
+      ]
+        },        {
+      "boundingVolume": { "box": [-34.28545761, 44.75749969, 129.05877686, 13.35293579, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95850372] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_0_3_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-7.57958508, 44.75749969, 129.05877686, 13.35293674, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95850372] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_1_3_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-34.28545761, 18.63548660, 134.97576904, 13.35293579, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95849609] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_0_2_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-7.57958508, 18.63548660, 134.97576904, 13.35293674, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95849609] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_1_2_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-34.28545761, 44.75749969, 134.97576904, 13.35293579, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95849609] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_0_3_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-7.57958508, 44.75749969, 134.97576904, 13.35293674, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95849609] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_1_3_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        }
+      ]
+        },        {
+      "boundingVolume": { "box": [32.47922516, 31.69649315, 132.01727295, 26.70587158, 0, 0, 0, 26.12201118, 0, 0, 0, 5.91699982] },
+      "geometricError": 75.64585876,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_1_1_1_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      },
+      "children": [
+        {
+      "boundingVolume": { "box": [19.12628937, 18.63548660, 129.05877686, 13.35293674, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95850372] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_2_2_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [45.83216095, 18.63548660, 129.05877686, 13.35293579, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95850372] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_3_2_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [19.12628937, 44.75749969, 129.05877686, 13.35293674, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95850372] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_2_3_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [45.83216095, 44.75749969, 129.05877686, 13.35293579, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95850372] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_3_3_0_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [19.12628937, 18.63548660, 134.97576904, 13.35293674, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95849609] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_2_2_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [45.83216095, 18.63548660, 134.97576904, 13.35293579, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95849609] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_3_2_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [19.12628937, 44.75749969, 134.97576904, 13.35293674, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95849609] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_2_3_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [45.83216095, 44.75749969, 134.97576904, 13.35293579, 0, 0, 0, 13.06100559, 0, 0, 0, 2.95849609] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_2_3_3_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        }
+      ]
+        },        {
+      "boundingVolume": { "box": [-20.93252182, -20.54752922, 143.85125732, 26.70587158, 0, 0, 0, 26.12201118, 0, 0, 0, 5.91699219] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_1_0_0_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [32.47922516, -20.54752922, 143.85125732, 26.70587158, 0, 0, 0, 26.12201118, 0, 0, 0, 5.91699219] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_1_1_0_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [-20.93252182, 31.69649315, 143.85125732, 26.70587158, 0, 0, 0, 26.12201118, 0, 0, 0, 5.91699219] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_1_0_1_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        },        {
+      "boundingVolume": { "box": [32.47922516, 31.69649315, 143.85125732, 26.70587158, 0, 0, 0, 26.12201118, 0, 0, 0, 5.91699219] },
+      "geometricError": 0.00000000,
+      "refine": "ADD",
+      "content": {
+        "uri": "tile_1_1_1_1_gs.glb",
+        "extensions": {
+          "3DTILES_content_gltf": {
+            "extensionsRequired": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"],
+            "extensionsUsed": ["KHR_gaussian_splatting", "KHR_gaussian_splatting_compression_spz_2"]
+          }
+        }
+      }
+        }
+      ]
   }
 }

@@ -192,7 +192,7 @@ function computeIntersectionLocal(measurements) {
 
 const CesiumViewer = forwardRef(
   ({
-    tilesetUrl,
+    tilesetUrls,
     points,
     onAddPoint,
     offsetHeight,
@@ -210,7 +210,14 @@ const CesiumViewer = forwardRef(
     const currentModeRef = useRef("default"); // keep internal mode
     const [measurements, setMeasurements] = useState([]);
     const measurementIdCounter = useRef(0);
-    const tilesetRef = useRef(null);
+    const tilesetRefs = useRef([]);
+    const normalizedTilesetUrls = useMemo(() => {
+      const rawUrls = Array.isArray(tilesetUrls) ? tilesetUrls : [];
+      const cleaned = rawUrls
+        .map((url) => (typeof url === "string" ? url.trim() : ""))
+        .filter(Boolean);
+      return Array.from(new Set(cleaned));
+    }, [tilesetUrls]);
     const viewerContextOptions = useMemo(
       () => ({
         requestWebgl1: false,
@@ -429,64 +436,103 @@ const CesiumViewer = forwardRef(
         clearInterval(interval);
 
         const removeCurrentTileset = () => {
-          if (tilesetRef.current) {
-            viewer.scene.primitives.remove(tilesetRef.current);
-            tilesetRef.current = null;
+          if (tilesetRefs.current.length > 0) {
+            tilesetRefs.current.forEach((tileset) => {
+              viewer.scene.primitives.remove(tileset);
+            });
+            tilesetRefs.current = [];
           }
         };
 
         const loadTileset = (maximumScreenSpaceError) => {
           removeCurrentTileset();
 
-          if (!tilesetUrl) {
+          if (normalizedTilesetUrls.length === 0) {
             return;
           }
 
-          Cesium.Cesium3DTileset.fromUrl(tilesetUrl, {
-            maximumScreenSpaceError,
-            maximumMemoryUsage: 512,
-            skipLevelOfDetail: false,
-            cullWithChildrenBounds: true,
-            cullRequestsWhileMoving: true,
-            preloadWhenHidden: false,
-            preferLeaves: false,
-            dynamicScreenSpaceError: true,
-          })
-            .then((tileset) => {
-              if (cancelled) {
-                return;
+          Promise.allSettled(
+            normalizedTilesetUrls.map((url) =>
+              Cesium.Cesium3DTileset.fromUrl(url, {
+                maximumScreenSpaceError,
+                maximumMemoryUsage: 512,
+                skipLevelOfDetail: false,
+                cullWithChildrenBounds: true,
+                cullRequestsWhileMoving: true,
+                preloadWhenHidden: false,
+                preferLeaves: false,
+                dynamicScreenSpaceError: true,
+              })
+            )
+          ).then((results) => {
+            if (cancelled) {
+              return;
+            }
+
+            let firstLoadedTileset = null;
+            let hasVertexBufferIssue = false;
+
+            results.forEach((result, index) => {
+              const sourceUrl = normalizedTilesetUrls[index];
+              if (result.status === "fulfilled") {
+                const tileset = result.value;
+
+                // This app is explicitly for 3DGS rendering, so always keep splat rendering enabled.
+                if ("showGaussianSplatting" in tileset) {
+                  tileset.enableShowGaussianSplatting = true;
+                  tileset.showGaussianSplatting = true;
+                }
+
+                offsetTilesetHeight(tileset, offsetHeight);
+
+                /*if (typeof sourceUrl === "string" && sourceUrl.toLowerCase().includes("3dgs")) {
+                  tileset.debugShowBoundingVolume = true;
+                }*/
+
+                viewer.scene.primitives.add(tileset);
+                tilesetRefs.current.push(tileset);
+                if (!firstLoadedTileset) {
+                  firstLoadedTileset = tileset;
+                }
+              } else {
+                console.error(`Error loading tileset from ${sourceUrl}:`, result.reason);
+                const message = String(result.reason?.message || result.reason || "");
+                const mightBeVertexBufferIssue =
+                  message.includes("Vertex buffer is not big enough") ||
+                  message.includes("GL_INVALID_OPERATION") ||
+                  message.includes("0x00000502");
+                if (mightBeVertexBufferIssue) {
+                  hasVertexBufferIssue = true;
+                }
               }
+            });
 
-              // This app is explicitly for 3DGS rendering, so always keep splat rendering enabled.
-              if ("showGaussianSplatting" in tileset) {
-                tileset.enableShowGaussianSplatting = true;
-                tileset.showGaussianSplatting = true;
-              }
+            if (firstLoadedTileset) {
+              viewer.zoomTo(firstLoadedTileset);
+            } else if (hasVertexBufferIssue && recoveryAttempts < 2) {
+              recoveryAttempts += 1;
+              currentMaxScreenSpaceError = Math.min(currentMaxScreenSpaceError * 2, 512);
+              console.warn(
+                `Retrying tileset load with higher maximumScreenSpaceError=${currentMaxScreenSpaceError} while keeping Gaussian splatting enabled.`
+              );
+              loadTileset(currentMaxScreenSpaceError);
+            }
+          }).catch((error) => {
+            console.error("Unexpected error loading tilesets:", error);
+            const message = String(error?.message || error || "");
+            const mightBeVertexBufferIssue =
+              message.includes("Vertex buffer is not big enough") ||
+              message.includes("GL_INVALID_OPERATION") ||
+              message.includes("0x00000502");
 
-              //tileset.debugShowBoundingVolume = true;
-
-              offsetTilesetHeight(tileset, offsetHeight);
-
-              viewer.scene.primitives.add(tileset);
-              viewer.zoomTo(tileset);
-              tilesetRef.current = tileset;
-            })
-            .catch((error) => {
-              console.error("Error loading tileset:", error);
-              const message = String(error?.message || error || "");
-              const mightBeVertexBufferIssue =
-                message.includes("Vertex buffer is not big enough") ||
-                message.includes("GL_INVALID_OPERATION") ||
-                message.includes("0x00000502");
-
-              if (mightBeVertexBufferIssue && recoveryAttempts < 2) {
-                recoveryAttempts += 1;
-                currentMaxScreenSpaceError = Math.min(currentMaxScreenSpaceError * 2, 512);
-                console.warn(
-                  `Retrying tileset load with higher maximumScreenSpaceError=${currentMaxScreenSpaceError} while keeping Gaussian splatting enabled.`
-                );
-                loadTileset(currentMaxScreenSpaceError);
-              }
+            if (mightBeVertexBufferIssue && recoveryAttempts < 2) {
+              recoveryAttempts += 1;
+              currentMaxScreenSpaceError = Math.min(currentMaxScreenSpaceError * 2, 512);
+              console.warn(
+                `Retrying tileset load with higher maximumScreenSpaceError=${currentMaxScreenSpaceError} while keeping Gaussian splatting enabled.`
+              );
+              loadTileset(currentMaxScreenSpaceError);
+            }
             });
         };
 
@@ -577,12 +623,14 @@ const CesiumViewer = forwardRef(
         if (removeRenderErrorListener) removeRenderErrorListener();
         if (handler) handler.destroy();
         const viewer = viewerRef.current?.cesiumElement;
-        if (viewer && tilesetRef.current) {
-          viewer.scene.primitives.remove(tilesetRef.current);
-          tilesetRef.current = null;
+        if (viewer && tilesetRefs.current.length > 0) {
+          tilesetRefs.current.forEach((tileset) => {
+            viewer.scene.primitives.remove(tileset);
+          });
+          tilesetRefs.current = [];
         }
       };
-    }, [tilesetUrl, offsetHeight]);
+    }, [normalizedTilesetUrls, offsetHeight]);
 
     return (
       <Viewer
