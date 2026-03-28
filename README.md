@@ -1,8 +1,6 @@
 <div align="center">
 
-   <h1>3DGS Point Measurement Tool</h1>
-
-   <h2>Accurate Point Measurement in 3DGS: A New Alternative to Traditional Stereoscopic-View Based Measurements</h2>
+   <h1>Accurate Point Measurement in 3DGS: A New Alternative to Traditional Stereoscopic-View Based Measurements</h1>
 
    <p><strong>Deyan Deng¹, Rongjun Qin¹*</strong></p>
 
