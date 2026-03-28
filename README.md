@@ -1,5 +1,4 @@
 <div align="center">
-
    <h1>Accurate Point Measurement in 3DGS: A New Alternative to Traditional Stereoscopic-View Based Measurements</h1>
 
    <p><strong>Deyan Deng¹, Rongjun Qin¹*</strong></p>
@@ -128,16 +127,6 @@ npm run preview
 └── package.json             # Project dependencies
 ```
 
-## 🛠️ Technology Stack
-
-- **Frontend Framework**: React 19 with Vite
-- **3D Visualization**: Cesium & Resium
-- **UI Library**: Material-UI (MUI)
-- **Routing**: React Router
-- **Drag & Drop**: dnd-kit
-- **Cloud Storage**: AWS S3
-- **Styling**: Emotion
-
 ## 📦 Dependencies
 
 Core dependencies include:
@@ -148,9 +137,6 @@ Core dependencies include:
 
 See `package.json` for complete dependency list and versions.
 
-## 🔧 Configuration
-
-Configuration for features like AWS S3 integration is handled via environment variables. Please refer to the `Set up environment variables` step in the Getting Started section for instructions on how to create and use the `.env.local` file.
 
 ## 📝 Citation
 
