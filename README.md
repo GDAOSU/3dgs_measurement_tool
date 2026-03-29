@@ -21,7 +21,6 @@ This repository contains the official implementation for the 3DGS point measurem
 
 We provide a comprehensive suite of resources for this project:
 
-- **Project Page**: https://github.com/GDAOSU/3dgs_measurement_tool
 - **Project Page**: https://gdaosu.github.io/3dgs_measurement_tool/
 - **Interactive Demo**: https://huggingface.co/spaces/GDAOSU/3dgs_measurement_tool
 - **Paper**: https://arxiv.org/abs/2603.24716
