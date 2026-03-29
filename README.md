@@ -1,12 +1,13 @@
 <div align="center">
-   <h1>Accurate Point Measurement in 3DGS: A New Alternative to Traditional Stereoscopic-View Based Measurements</h1>
+   <h1>Accurate Point Measurement in 3DGS</h1>
+   <h2>A New Alternative to Traditional Stereoscopic-View Based Measurements</h2>
 
    <p><strong>Deyan Deng¹, Rongjun Qin¹*</strong></p>
 
    <p>¹ The Ohio State University<br>* Corresponding author</p>
 
    <p>
-      <a href="https://github.com/GDAOSU/3dgs_measurement_tool"><img src="https://img.shields.io/badge/Project-Page-2f80ed?style=flat-square" alt="Project Page"></a>
+      <a href="https://gdaosu.github.io/3dgs_measurement_tool/"><img src="https://img.shields.io/badge/Project-Page-2f80ed?style=flat-square" alt="Project Page"></a>
       <a href="https://huggingface.co/spaces/GDAOSU/3dgs_measurement_tool"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-f7931a?style=flat-square" alt="Hugging Face Spaces"></a>
       <a href="https://arxiv.org/abs/2603.24716"><img src="https://img.shields.io/badge/arXiv-2603.24716-b31b1b?style=flat-square&logo=arxiv&logoColor=white" alt="arXiv"></a>
       <a href="./docs/ISPRS_Congress_2026_Full_paper_point_measurement_in_3DGS.pdf"><img src="https://img.shields.io/badge/Paper-PDF-4c8c2b?style=flat-square&logo=readthedocs&logoColor=white" alt="Paper PDF"></a>
@@ -21,6 +22,7 @@ This repository contains the official implementation for the 3DGS point measurem
 We provide a comprehensive suite of resources for this project:
 
 - **Project Page**: https://github.com/GDAOSU/3dgs_measurement_tool
+- **Project Page**: https://gdaosu.github.io/3dgs_measurement_tool/
 - **Interactive Demo**: https://huggingface.co/spaces/GDAOSU/3dgs_measurement_tool
 - **Paper**: https://arxiv.org/abs/2603.24716
 - **PDF**: [ISPRS_Congress_2026_Full_paper_point_measurement_in_3DGS.pdf](./docs/ISPRS_Congress_2026_Full_paper_point_measurement_in_3DGS.pdf)
