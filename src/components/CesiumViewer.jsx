@@ -5,6 +5,7 @@ import React, {
   forwardRef,
   useImperativeHandle,
   useMemo,
+  useCallback,
 } from "react";
 import { Viewer, Entity, PolylineGraphics, PolygonGraphics } from "resium";
 import * as Cesium from "cesium";
@@ -198,6 +199,7 @@ const CesiumViewer = forwardRef(
     offsetHeight,
     selectedPoint,
     pointAppearance,
+    ellipsoidScale,
     // New props for drawing
     drawingState,
     polylines,
@@ -211,6 +213,9 @@ const CesiumViewer = forwardRef(
     const [measurements, setMeasurements] = useState([]);
     const measurementIdCounter = useRef(0);
     const tilesetRefs = useRef([]);
+    const currentTilesHomeBoundingSphereRef = useRef(null);
+    const renderFrameCountRef = useRef(0);
+    const renderStatsIntervalRef = useRef(null);
     const normalizedTilesetUrls = useMemo(() => {
       const rawUrls = Array.isArray(tilesetUrls) ? tilesetUrls : [];
       const cleaned = rawUrls
@@ -218,6 +223,13 @@ const CesiumViewer = forwardRef(
         .filter(Boolean);
       return Array.from(new Set(cleaned));
     }, [tilesetUrls]);
+
+    const requestSceneRender = useCallback(() => {
+      const viewer = getViewer();
+      if (viewer?.scene?.requestRender) {
+        viewer.scene.requestRender();
+      }
+    }, []);
     const viewerContextOptions = useMemo(
       () => ({
         requestWebgl1: false,
@@ -240,6 +252,18 @@ const CesiumViewer = forwardRef(
     // Use a ref to hold the latest onPointSelectForDrawing callback to avoid re-running the main effect.
     const onPointSelectForDrawingRef = useRef(onPointSelectForDrawing);
     useEffect(() => { onPointSelectForDrawingRef.current = onPointSelectForDrawing; }, [onPointSelectForDrawing]);
+
+    const getViewer = () => {
+      try {
+        return viewerRef.current?.cesiumElement ?? null;
+      } catch {
+        return null;
+      }
+    };
+
+    const logViewerState = (label, details = {}) => {
+      console.log(`[CesiumViewer] ${label}`, details);
+    };
 
 
     const addMeausure = (cameraPosition, cartesian) => {
@@ -425,15 +449,45 @@ const CesiumViewer = forwardRef(
       let handler;
       let cancelled = false;
       let removeRenderErrorListener;
+      let removeHomeButtonListener;
+      let removePostRenderListener;
       let recoveryAttempts = 0;
       let currentMaxScreenSpaceError = 128;
 
       // Wait until viewerRef.current.cesiumElement becomes available
       const interval = setInterval(() => {
-        const viewer = viewerRef.current?.cesiumElement;
+        const viewer = getViewer();
         if (!viewer) return;
 
+        viewer.scene.requestRenderMode = true;
+        viewer.scene.maximumRenderTimeChange = Number.POSITIVE_INFINITY;
+
         clearInterval(interval);
+        logViewerState("viewer ready", {
+          requestRenderMode: viewer.scene.requestRenderMode,
+          maximumRenderTimeChange: viewer.scene.maximumRenderTimeChange,
+          targetFrameRate: viewer.targetFrameRate,
+          tilesetCount: normalizedTilesetUrls.length,
+        });
+
+        renderFrameCountRef.current = 0;
+        const onPostRender = () => {
+          renderFrameCountRef.current += 1;
+        };
+        viewer.scene.postRender.addEventListener(onPostRender);
+        removePostRenderListener = () => viewer.scene.postRender.removeEventListener(onPostRender);
+
+        renderStatsIntervalRef.current = window.setInterval(() => {
+          const frameCount = renderFrameCountRef.current;
+          renderFrameCountRef.current = 0;
+          logViewerState("render stats", {
+            framesInLastInterval: frameCount,
+            tilesetsLoaded: tilesetRefs.current.length,
+            measurements: measurements.length,
+            points: pointsRef.current.length,
+            drawingMode: drawingStateRef.current.mode,
+          });
+        }, 5000);
 
         const removeCurrentTileset = () => {
           if (tilesetRefs.current.length > 0) {
@@ -442,12 +496,20 @@ const CesiumViewer = forwardRef(
             });
             tilesetRefs.current = [];
           }
+          currentTilesHomeBoundingSphereRef.current = null;
         };
 
         const loadTileset = (maximumScreenSpaceError) => {
           removeCurrentTileset();
 
+          logViewerState("loading tilesets", {
+            urls: normalizedTilesetUrls,
+            maximumScreenSpaceError,
+            offsetHeight,
+          });
+
           if (normalizedTilesetUrls.length === 0) {
+            logViewerState("no tilesets configured");
             return;
           }
 
@@ -491,6 +553,11 @@ const CesiumViewer = forwardRef(
 
                 viewer.scene.primitives.add(tileset);
                 tilesetRefs.current.push(tileset);
+                logViewerState("tileset loaded", {
+                  url: sourceUrl,
+                  maximumScreenSpaceError,
+                  tilesetsLoaded: tilesetRefs.current.length,
+                });
                 if (!firstLoadedTileset) {
                   firstLoadedTileset = tileset;
                 }
@@ -508,7 +575,24 @@ const CesiumViewer = forwardRef(
             });
 
             if (firstLoadedTileset) {
+              const loadedBoundingSpheres = tilesetRefs.current
+                .map((tileset) => tileset.boundingSphere)
+                .filter((sphere) => Cesium.defined(sphere));
+
+              if (loadedBoundingSpheres.length === 1) {
+                currentTilesHomeBoundingSphereRef.current = Cesium.BoundingSphere.clone(
+                  loadedBoundingSpheres[0],
+                  new Cesium.BoundingSphere()
+                );
+              } else if (loadedBoundingSpheres.length > 1) {
+                currentTilesHomeBoundingSphereRef.current = Cesium.BoundingSphere.fromBoundingSpheres(
+                  loadedBoundingSpheres,
+                  new Cesium.BoundingSphere()
+                );
+              }
+
               viewer.zoomTo(firstLoadedTileset);
+              viewer.scene.requestRender();
             } else if (hasVertexBufferIssue && recoveryAttempts < 2) {
               recoveryAttempts += 1;
               currentMaxScreenSpaceError = Math.min(currentMaxScreenSpaceError * 2, 512);
@@ -555,6 +639,23 @@ const CesiumViewer = forwardRef(
         viewer.scene.renderError.addEventListener(onRenderError);
         removeRenderErrorListener = () => viewer.scene.renderError.removeEventListener(onRenderError);
 
+        const homeCommand = viewer.homeButton?.viewModel?.command;
+        if (homeCommand) {
+          removeHomeButtonListener = homeCommand.beforeExecute.addEventListener((commandInfo) => {
+            const targetBoundingSphere = currentTilesHomeBoundingSphereRef.current;
+            if (!targetBoundingSphere) {
+              return;
+            }
+
+            commandInfo.cancel = true;
+            const range = Math.max(targetBoundingSphere.radius * 2.0, 50.0);
+            viewer.camera.flyToBoundingSphere(targetBoundingSphere, {
+              duration: 1.5,
+              offset: new Cesium.HeadingPitchRange(0.0, -0.5, range),
+            });
+          });
+        }
+
         loadTileset(currentMaxScreenSpaceError);
 
         // Set up mouse event handler
@@ -573,7 +674,10 @@ const CesiumViewer = forwardRef(
           const { mode: drawingMode } = drawingStateRef.current;
 
           if (drawingMode === 'polyline' || drawingMode === 'polygon') {
-            const viewer = viewerRef.current.cesiumElement;
+            const viewer = getViewer();
+            if (!viewer) {
+              return;
+            }
             
             // 1. Try to pick an existing point entity
             const pickedObject = viewer.scene.pick(click.position);
@@ -616,28 +720,56 @@ const CesiumViewer = forwardRef(
         }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
       }, 200); // check every 200 ms until viewer is ready
 
+      requestSceneRender();
+
       // Cleanup
       return () => {
         cancelled = true;
         clearInterval(interval);
+        if (renderStatsIntervalRef.current) {
+          clearInterval(renderStatsIntervalRef.current);
+          renderStatsIntervalRef.current = null;
+        }
         if (removeRenderErrorListener) removeRenderErrorListener();
+        if (removeHomeButtonListener) removeHomeButtonListener();
+        if (removePostRenderListener) removePostRenderListener();
         if (handler) handler.destroy();
-        const viewer = viewerRef.current?.cesiumElement;
+        const viewer = getViewer();
         if (viewer && tilesetRefs.current.length > 0) {
           tilesetRefs.current.forEach((tileset) => {
             viewer.scene.primitives.remove(tileset);
           });
           tilesetRefs.current = [];
+          currentTilesHomeBoundingSphereRef.current = null;
         }
+        logViewerState("viewer cleanup");
       };
-    }, [normalizedTilesetUrls, offsetHeight]);
+    }, [normalizedTilesetUrls, offsetHeight, requestSceneRender]);
 
+    useEffect(() => {
+      requestSceneRender();
+    }, [
+      requestSceneRender,
+      points,
+      measurements,
+      polylines,
+      polygons,
+      selectedPoint,
+      selectedGeometry,
+      previewPointId,
+      drawingState,
+      pointAppearance,
+      ellipsoidScale,
+    ]);
     return (
       <Viewer
         ref={viewerRef}
         full
         infoBox={false}
         selectionIndicator={false}
+        requestRenderMode
+        maximumRenderTimeChange={Number.POSITIVE_INFINITY}
+        targetFrameRate={30}
         contextOptions={viewerContextOptions}
       >
         {points.map((pt) => {
@@ -664,6 +796,7 @@ const CesiumViewer = forwardRef(
             pointColor = Color.GREEN;
             pixelSize = 12;
           }
+          scale *= (Number(ellipsoidScale) || 1);
 
           if (pointAppearance === 'ellipsoid') {
             return createCovarianceEntity(

@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState, useCallback } from "react"
 import CesiumViewer from "../components/CesiumViewer";
 import MeasurePanel from "../components/MeasurePanel";
 import GeometryCreatorPanel from "../components/GeometryCreatorPanel";
+import * as Cesium from "cesium";
 import { getDefaultBucket, getAwsRegion } from "../utils/awsConfig";
 import {
   Button
@@ -37,6 +38,95 @@ function downloadFile(content, fileName, contentType) {
   a.click();
   window.URL.revokeObjectURL(url);
   a.remove();
+}
+
+function parseCsvPointRows(text) {
+  const lines = text
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  if (lines.length < 2) {
+    return [];
+  }
+
+  const headers = lines[0].split(",").map((h) => h.trim().toLowerCase());
+  const lonIndex = headers.indexOf("lon");
+  const latIndex = headers.indexOf("lat");
+  const altIndex = headers.indexOf("alt");
+  const accuracyIndex = headers.indexOf("accuracy");
+
+  if (lonIndex === -1 || latIndex === -1 || altIndex === -1) {
+    throw new Error("CSV must include lon, lat, and alt columns.");
+  }
+
+  const points = [];
+  for (let i = 1; i < lines.length; i += 1) {
+    const columns = lines[i].split(",").map((c) => c.trim());
+    const lon = Number(columns[lonIndex]);
+    const lat = Number(columns[latIndex]);
+    const alt = Number(columns[altIndex]);
+    const accuracyRaw = accuracyIndex >= 0 ? Number(columns[accuracyIndex]) : 1;
+    const accuracy = Number.isFinite(accuracyRaw) && accuracyRaw > 0 ? accuracyRaw : 1;
+
+    if (!Number.isFinite(lon) || !Number.isFinite(lat) || !Number.isFinite(alt)) {
+      continue;
+    }
+
+    points.push({ lon, lat, alt, accuracy });
+  }
+
+  return points;
+}
+
+function parseGeoJsonPointRows(text) {
+  const data = JSON.parse(text);
+  if (data?.type !== "FeatureCollection" || !Array.isArray(data.features)) {
+    throw new Error("GeoJSON must be a FeatureCollection.");
+  }
+
+  const points = [];
+  data.features.forEach((feature) => {
+    const geometry = feature?.geometry;
+    if (!geometry || geometry.type !== "Point" || !Array.isArray(geometry.coordinates)) {
+      return;
+    }
+
+    const lon = Number(geometry.coordinates[0]);
+    const lat = Number(geometry.coordinates[1]);
+    const alt = Number(geometry.coordinates[2] ?? 0);
+    const accuracyRaw = Number(feature?.properties?.accuracy);
+    const accuracy = Number.isFinite(accuracyRaw) && accuracyRaw > 0 ? accuracyRaw : 1;
+
+    if (!Number.isFinite(lon) || !Number.isFinite(lat) || !Number.isFinite(alt)) {
+      return;
+    }
+
+    points.push({ lon, lat, alt, accuracy });
+  });
+
+  return points;
+}
+
+function toPointEntity(rawPoint) {
+  const ecef = Cesium.Cartesian3.fromDegrees(rawPoint.lon, rawPoint.lat, rawPoint.alt);
+  const variance = rawPoint.accuracy * rawPoint.accuracy;
+
+  return {
+    x: ecef.x,
+    y: ecef.y,
+    z: ecef.z,
+    lon: rawPoint.lon,
+    lat: rawPoint.lat,
+    alt: rawPoint.alt,
+    accuracy: rawPoint.accuracy,
+    covariance: [
+      [variance, 0, 0],
+      [0, variance, 0],
+      [0, 0, variance],
+    ],
+    measures: [],
+  };
 }
 
 export default function Home() {
@@ -127,6 +217,7 @@ export default function Home() {
   const maxPointId = useRef(0);
   const [selectedPoint, setSelectedPoint] = useState(0);
   const [pointAppearance, setPointAppearance] = useState("ellipsoid"); // 'ellipsoid' or 'point'
+  const [ellipsoidScale, setEllipsoidScale] = useState(1.0);
 
   const handleAddPoint = useCallback((point) => {
     maxPointId.current += 1;
@@ -158,6 +249,50 @@ export default function Home() {
 
   const handlePointAppearanceChange = (newAppearance) => {
     setPointAppearance(newAppearance);
+  };
+
+  const handleIncreaseEllipsoidScale = () => {
+    setEllipsoidScale((prev) => Math.min(prev + 0.1, 5.0));
+  };
+
+  const handleDecreaseEllipsoidScale = () => {
+    setEllipsoidScale((prev) => Math.max(prev - 0.1, 0.1));
+  };
+
+  const handleImportPoints = async (file) => {
+    try {
+      const fileText = await file.text();
+      const lowerName = file.name.toLowerCase();
+
+      let parsedPoints = [];
+      if (lowerName.endsWith(".csv")) {
+        parsedPoints = parseCsvPointRows(fileText);
+      } else if (lowerName.endsWith(".geojson") || lowerName.endsWith(".json")) {
+        parsedPoints = parseGeoJsonPointRows(fileText);
+      } else {
+        throw new Error("Unsupported file type. Use .csv or .geojson.");
+      }
+
+      if (parsedPoints.length === 0) {
+        alert("No valid point rows found in the selected file.");
+        return;
+      }
+
+      const convertedPoints = parsedPoints.map(toPointEntity);
+      setPoints((prev) => {
+        const next = [...prev];
+        convertedPoints.forEach((point) => {
+          maxPointId.current += 1;
+          next.push({ ...point, id: maxPointId.current });
+        });
+        return next;
+      });
+
+      alert(`Imported ${convertedPoints.length} point(s) from ${file.name}.`);
+    } catch (error) {
+      console.error("Failed to import points:", error);
+      alert(error?.message || "Failed to import points.");
+    }
   };
 
   // --- New Geometry Handlers ---
@@ -413,6 +548,7 @@ export default function Home() {
         offsetHeight={offsetHeight}
         selectedPoint={selectedPoint}
         pointAppearance={pointAppearance}
+        ellipsoidScale={ellipsoidScale}
         // New props for drawing
         drawingState={drawingState}
         polylines={polylines}
@@ -440,6 +576,9 @@ export default function Home() {
         onDeletePoint={handleDeletePoint}
         pointAppearance={pointAppearance}
         onPointAppearanceChange={handlePointAppearanceChange}
+        ellipsoidScale={ellipsoidScale}
+        onIncreaseEllipsoidScale={handleIncreaseEllipsoidScale}
+        onDecreaseEllipsoidScale={handleDecreaseEllipsoidScale}
         // New props for geometry
         polylines={polylines}
         polygons={polygons}
@@ -451,6 +590,7 @@ export default function Home() {
         onSelectGeometry={handleSelectGeometry}
         onDeleteGeometry={handleDeleteGeometry}
         onExportGeometries={handleExportGeometries}
+        onImportPoints={handleImportPoints}
       />
 
       <GeometryCreatorPanel

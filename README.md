@@ -154,9 +154,3 @@ If you use this tool or the methodology in your research, please cite our paper:
 }
 ```
 
-## 📧 Contact
-
-For questions or inquiries about this work, please contact:
-- **Author(s)**: Deyan Deng, Rongjun Qin
-- **Email**: deng.1069@osu.edu, qin.324@osu.edu
-- **Institution**: The Ohio State University

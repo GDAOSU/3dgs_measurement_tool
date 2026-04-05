@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Card, CardContent, Typography, Button, List, ListItemButton,
   ListItemText, Divider, Stack, FormControl, InputLabel, Select,
@@ -10,6 +10,7 @@ import DownloadIcon from "@mui/icons-material/Download";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import AddIcon from "@mui/icons-material/Add";
+import UploadFileIcon from "@mui/icons-material/UploadFile";
 import { getDefaultBucket, getAwsRegion } from "../utils/awsConfig";
 
 const DEFAULT_CUSTOM_MODEL = {
@@ -103,6 +104,9 @@ export default function MeasurePanel({
   onEditModel,
   pointAppearance,
   onPointAppearanceChange,
+  ellipsoidScale,
+  onIncreaseEllipsoidScale,
+  onDecreaseEllipsoidScale,
   // New geometry props
   polylines,
   polygons,
@@ -114,6 +118,7 @@ export default function MeasurePanel({
   onSelectGeometry,
   onDeleteGeometry,
   onExportGeometries,
+  onImportPoints,
 }) {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [customDialogOpen, setCustomDialogOpen] = useState(false);
@@ -125,6 +130,7 @@ export default function MeasurePanel({
     urlModel || DEFAULT_URL_MODEL
   );
   const [tabIndex, setTabIndex] = useState(0);
+  const importInputRef = useRef(null);
 
   const handleTabChange = (event, newValue) => {
     setTabIndex(newValue);
@@ -212,6 +218,24 @@ export default function MeasurePanel({
     setUrlDialogOpen(false);
   };
 
+  const handleImportClick = () => {
+    if (importInputRef.current) {
+      importInputRef.current.click();
+    }
+  };
+
+  const handleImportFileChange = (event) => {
+    const file = event.target.files?.[0];
+    if (!file) {
+      return;
+    }
+    if (onImportPoints) {
+      onImportPoints(file);
+    }
+    // Allow selecting the same file again in a later import.
+    event.target.value = "";
+  };
+
   return (
     <Card
       sx={{
@@ -287,6 +311,13 @@ export default function MeasurePanel({
         </Box>
 
         <TabPanel value={tabIndex} index={0}>
+          <input
+            ref={importInputRef}
+            type="file"
+            accept=".csv,.geojson,.json,application/json,text/csv,application/geo+json"
+            style={{ display: "none" }}
+            onChange={handleImportFileChange}
+          />
           <List dense sx={{ maxHeight: 200, overflowY: "auto" }}>
             {points.length === 0 && (
               <Typography variant="body2" color="text.secondary" sx={{ px: 1 }}>
@@ -309,7 +340,7 @@ export default function MeasurePanel({
                 >
                   <ListItemText
                     primary={`Point ${p.id}`}
-                    secondary={`(${p.lat.toFixed(8)}, ${p.lon.toFixed(8)}, ${p.alt.toFixed(4)}) | Iz = ${p.accuracy.toFixed(3)} m`}
+                    secondary={`(${p.lat.toFixed(8)}, ${p.lon.toFixed(8)}, ${p.alt.toFixed(4)}) | σ = ${p.accuracy.toFixed(3)} m`}
                   />
                 </ListItemButton>
                 {index < points.length - 1 && <Divider component="li" />}
@@ -317,22 +348,48 @@ export default function MeasurePanel({
             ))}
           </List>
           <Stack spacing={1} sx={{ mt: 1 }}>
-            <ToggleButtonGroup
-              value={pointAppearance}
-              exclusive
-              fullWidth
-              size="small"
-              onChange={(event, newAppearance) => {
-                // Prevent unselecting all buttons
-                if (newAppearance !== null) {
-                  onPointAppearanceChange(newAppearance);
-                }
-              }}
-              aria-label="point appearance"
-            >
-              <ToggleButton value="ellipsoid" sx={{ flex: 1 }}>Error Ellipsoid</ToggleButton>
-              <ToggleButton value="point" sx={{ flex: 1 }}>Simple Point</ToggleButton>
-            </ToggleButtonGroup>
+            <Stack direction="row" spacing={1} alignItems="center">
+              <ToggleButtonGroup
+                value={pointAppearance}
+                exclusive
+                fullWidth
+                size="small"
+                onChange={(event, newAppearance) => {
+                  // Prevent unselecting all buttons
+                  if (newAppearance !== null) {
+                    onPointAppearanceChange(newAppearance);
+                  }
+                }}
+                aria-label="point appearance"
+                sx={{ flex: 1 }}
+              >
+                <ToggleButton value="ellipsoid" sx={{ flex: 1 }}>Error Ellipsoid</ToggleButton>
+                <ToggleButton value="point" sx={{ flex: 1 }}>Simple Point</ToggleButton>
+              </ToggleButtonGroup>
+              <Stack direction="row" spacing={0.5}>
+                <Button
+                  variant="outlined"
+                  size="small"
+                  onClick={onDecreaseEllipsoidScale}
+                  disabled={pointAppearance !== "ellipsoid"}
+                  sx={{ minWidth: 36, px: 0 }}
+                >
+                  -
+                </Button>
+                <Button
+                  variant="outlined"
+                  size="small"
+                  onClick={onIncreaseEllipsoidScale}
+                  disabled={pointAppearance !== "ellipsoid"}
+                  sx={{ minWidth: 36, px: 0 }}
+                >
+                  +
+                </Button>
+              </Stack>
+            </Stack>
+            <Typography variant="caption" color="text.secondary" sx={{ px: 0.5 }}>
+              Ellipsoid scale: {Number(ellipsoidScale).toFixed(2)}x
+            </Typography>
             <Button
               variant="contained"
               color={measuring ? "error" : "primary"}
@@ -343,6 +400,16 @@ export default function MeasurePanel({
             </Button>
             <Stack direction="row" spacing={1}>
               <ExportMenu onExport={(format) => onExportGeometries('point', format)} disabled={points.length === 0} />
+              <Button
+                variant="outlined"
+                startIcon={<UploadFileIcon />}
+                onClick={handleImportClick}
+                fullWidth
+              >
+                Import
+              </Button>
+            </Stack>
+            <Stack direction="row" spacing={1}>
               <Button
                 variant="outlined"
                 color="error"
