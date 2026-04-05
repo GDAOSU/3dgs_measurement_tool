@@ -43,14 +43,11 @@ Try the interactive demo on HuggingFace Spaces: [3DGS Measurement Tool](https://
 
 ## ✨ Features
 
-- **Interactive 3D Visualization**: Navigate and explore 3DGS models using Cesium
-- **Point Measurement**: Measure 3D points via multi-ray intersection for high accuracy.
-- **Geometry Creation**: Create polylines and polygons from measured points.
-- **Real-time Interaction**: Instant visualization of measurements with interactive controls
-- **Multi-view Support**: Stereoscopic-view alternative measurement approach
-- **Data Export**: Export points, polylines, and polygons to GeoJSON, KML, and CSV.
-- **Client-Side Processing**: All core measurement logic runs in the browser. No server required for measurement features.
-- **Responsive Design**: Works on desktop and tablets
+- **Automated 3DGS Converter**: Features an integrated server-side converter that automatically translates raw 3DGS files (PLY, SPLAT or SPZ) into the 3D Tiles format, allowing them to be immediately visualized within our online software.
+- **Interactive Point Measurement with Visual Error Modeling**: Extracts precise 3D spatial coordinates using multi-ray triangulation and least squares optimization. Crucially, the system calculates the geometric uncertainty of every measurement and visually demonstrates its accuracy by rendering dynamic 3D error ellipsoids, providing users with immediate, intuitive feedback on measurement reliability.
+- **Complex Geometric Construction**: Enables users to dynamically construct, visualize, and manage complex spatial geometries (polylines and polygons) derived from the measured 3D point data.
+- **Standardized Data Export**: Allows users to seamlessly export all extracted coordinates and constructed geometries into standard GIS formats, specifically GeoJSON, CSV, and KML, ensuring immediate interoperability with external downstream analysis software.
+
 
 ## 🚀 Getting Started
 
